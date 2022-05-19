@@ -1,7 +1,7 @@
 --- 
 title: "Geoestatística com R"
 subtitle: "Disciplina do PPGME/UFPA"
-author: "PG Pinheiro, Moise Leance e JM Protázio, "
+author: "PG Pinheiro, Moise Leance e JM Protázio."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
