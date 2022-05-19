@@ -1,6 +1,6 @@
 output_dir: "docs"
-book_filename: "GeoEstat_PPGME"
+book_filename: "book_GeoEstat_PPGME"
 delete_merged_file: true
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Capítulo "
