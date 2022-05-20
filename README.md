@@ -1,7 +1,7 @@
 Bem-vindo/a! 
 Welcome! 
 
-Este material foi concebido como atividade do Estágio Docência para auxiliar os/as alunos/as do PPGME/ICEN/UFPA.
+Este material foi concebido como material pedagógico durante as atividades do Estágio Docência para auxiliar os/as alunos/as do PPGME/ICEN/UFPA.
 
 This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
 
