@@ -150,8 +150,10 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter{About}\label{about}}
+\hypertarget{sobre}{%
+\chapter{Sobre}\label{sobre}}
+
+Nós idealizamos este material como uma contribuição dos pesquisadores Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof.~Dr.~João Marcelo Protázio no programa.
 
 This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
 
@@ -195,6 +197,15 @@ As you work, you may start a local server to live preview this HTML book. This p
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# automatically create a bib database for R packages}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{write\_bib}\NormalTok{(}\FunctionTok{c}\NormalTok{(}
+  \FunctionTok{.packages}\NormalTok{(), }\StringTok{\textquotesingle{}bookdown\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}knitr\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rmarkdown\textquotesingle{}}
+\NormalTok{), }\StringTok{\textquotesingle{}packages.bib\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
