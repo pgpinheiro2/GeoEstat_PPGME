@@ -1,12 +1,12 @@
 --- 
 title: "Geoestatística com R"
 subtitle: "Disciplina do PPGME/UFPA"
-author: "PG Pinheiro, Moise Leance e JM Protázio."
+author: "PG Pinheiro, Moise Leance & JM Protázio."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: "https://pgpinheiro2.github.io/GeoEstat_PPGME/"
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is a minimal example of using the bookdown package to write a book.
