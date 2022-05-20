@@ -1,7 +1,7 @@
 --- 
 title: "Geoestatística com R"
 subtitle: "Disciplina do PPGME/UFPA"
-author: "PG Pinheiro, Moise Leance & JM Protázio (LAMEM/FAEST/ICEN/UFPA)"
+author: "PG Pinheiro^[Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. *e-mail*: pgpinheiro2@gmail.com], Moise Leance^[Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; *e-mail*: ] & JM Protázio^[Prof. Dr. na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; *e-mail*: mprotazio@gmail.com]"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
