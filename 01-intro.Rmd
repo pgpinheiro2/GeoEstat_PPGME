@@ -1,11 +1,21 @@
-# Hello bookdown 
+# Introdução
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+Neste curso, seguiremos o roteiro apresentado por ...., nos *slides* disponíveis em: [](). E o nosso texto-base é o livro de *A Practical Guide to Geostatistical Mapping* de *Tomislav Hengl* disponível gratuitamente no *link* [https://spatial-analyst.net/book/](https://spatial-analyst.net/book/).
 
-## A section
+## Definições
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+### Modelo Universal de Variação {-}
 
-### An unnumbered section {-}
+$$Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon'(\mathbf{s}) + \varepsilon''$$
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+### Inverso da distância {-}
+
+$$\hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i) $$
+
+### Variograma {-}
+
+### Semi-variograma {-}
+
+
+
+

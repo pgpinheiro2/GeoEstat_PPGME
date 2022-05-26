@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Geoestatística com R</title>
+  <title>Capítulo 2 Introdução | Geoestatística com R</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Geoestatística com R" />
+  <meta property="og:title" content="Capítulo 2 Introdução | Geoestatística com R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="https://github.com/pgpinheiro2/GeoEstat_PPGME" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Geoestatística com R" />
+  <meta name="twitter:title" content="Capítulo 2 Introdução | Geoestatística com R" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introdução.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="cross.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -224,60 +224,35 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Geoestatística com R</h1>
-<h2 class="subtitle"><em>Disciplina do PPGME/UFPA</em></h2>
-<p class="author"><em>Paulo Guilherme Pinheiro<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>; Moise Leance<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> &amp; João Marcelo Brazão Protázio<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></em></p>
-<p class="date"><em>2022-05-26</em></p>
+<div id="introdução" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Introdução<a href="introdução.html#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Neste curso, seguiremos o roteiro apresentado por …., nos <em>slides</em> disponíveis em: <a href=""></a>. E o nosso texto-base é o livro de <em>A Practical Guide to Geostatistical Mapping</em> de <em>Tomislav Hengl</em> disponível gratuitamente no <em>link</em> <a href="https://spatial-analyst.net/book/">https://spatial-analyst.net/book/</a>.</p>
+<div id="definições" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Definições<a href="introdução.html#definições" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="modelo-universal-de-variação" class="section level3 unnumbered hasAnchor">
+<h3>Modelo Universal de Variação<a href="introdução.html#modelo-universal-de-variação" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon&#39;(\mathbf{s}) + \varepsilon&#39;&#39;\]</span></p>
 </div>
-<div id="sobre" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Sobre<a href="index.html#sobre" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Nós idealizamos este material como uma contribuição dos pesquisadores do Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof. Dr. João Marcelo Protázio neste programa.</p>
-<p>Esperamos que vocês aproveitem este livro. Ele é uma pequena contribuição elaborado com todo cuidado para colaborar com a comunidade dos usuários do <code>R</code>. Consiste numa retribuição a quem muito nos tem ajudado ao longo destes anos de estudos.</p>
-<p>Agradecemos qualquer tipo de <em>feedback</em>. Eles sempre nos guiarão na melhoria deste livro. Os <em>e-mails</em> dos autores estão disponibilizados aqui para contato.</p>
-<div id="usage" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
+<div id="inverso-da-distância" class="section level3 unnumbered hasAnchor">
+<h3>Inverso da distância<a href="introdução.html#inverso-da-distância" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i) \]</span></p>
 </div>
-<div id="render-book" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Render book<a href="index.html#render-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can render the HTML version of this example book without changing anything:</p>
-<ol style="list-style-type: decimal">
-<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
-<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
-</ol>
-<p>Or build the book from the R console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
-<p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
+<div id="variograma" class="section level3 unnumbered hasAnchor">
+<h3>Variograma<a href="introdução.html#variograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="preview-book" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Preview book<a href="index.html#preview-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book”, or from the R console:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># automatically create a bib database for R packages</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(</span>
-<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span></span>
-<span id="cb3-4"><a href="index.html#cb3-4" aria-hidden="true" tabindex="-1"></a>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
+<div id="semi-variograma" class="section level3 unnumbered hasAnchor">
+<h3>Semi-variograma<a href="introdução.html#semi-variograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. <em>e-mail</em>: <a href="mailto:pgpinheiro2@gmail.com" class="email">pgpinheiro2@gmail.com</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; <em>e-mail</em>: <a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Prof. Dr. <em>rer. nat.</em> na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; <em>e-mail</em>: <a href="mailto:mprotazio@gmail.com" class="email">mprotazio@gmail.com</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introdução.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cross.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -308,7 +283,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
 "text": "Edit"
 },
 "history": {

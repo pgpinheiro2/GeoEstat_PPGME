@@ -1,7 +1,7 @@
 --- 
 title: "Geoestatística com R"
 subtitle: "Disciplina do PPGME/UFPA"
-author: "PG Pinheiro^[Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. *e-mail*: pgpinheiro2@gmail.com], Moise Leance^[Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; *e-mail*: ] & JM Protázio^[Prof. Dr. na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; *e-mail*: mprotazio@gmail.com]"
+author: "Paulo Guilherme Pinheiro^[Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. *e-mail*: pgpinheiro2@gmail.com]; Moise Leance^[Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; *e-mail*: ] & João Marcelo Brazão Protázio^[Prof. Dr. *rer. nat.* na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; *e-mail*: mprotazio@gmail.com]"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -18,13 +18,11 @@ github-repo: "https://github.com/pgpinheiro2/GeoEstat_PPGME"
 
 # Sobre
 
-Nós idealizamos este material como uma contribuição dos pesquisadores Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof. Dr. João Marcelo Protázio no programa. 
+Nós idealizamos este material como uma contribuição dos pesquisadores do Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof. Dr. João Marcelo Protázio neste programa. 
 
-Esperamos que vocês aproveitem este livro. Ele é uma pequena contribuição que construímos para colaborar com a comunidade `R` que muito nos ajuda ao longo destes anos de estudos. 
+Esperamos que vocês aproveitem este livro. Ele é uma pequena contribuição elaborado com todo cuidado para colaborar com a comunidade dos usuários do `R`. Consiste numa retribuição a quem muito nos tem ajudado ao longo destes anos de estudos. 
 
-Agradecemos qualquer tipo de *feedback*. Eles sempre nos guiarão na melhoria deste livro. 
-
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+Agradecemos qualquer tipo de *feedback*. Eles sempre nos guiarão na melhoria deste livro. Os *e-mails* dos autores estão disponibilizados aqui para contato.
 
 ## Usage 
 

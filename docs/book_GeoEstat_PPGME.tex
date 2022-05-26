@@ -37,7 +37,7 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={Geoestatística com R},
-  pdfauthor={PG Pinheiro, Moise Leance \& JM Protázio},
+  pdfauthor={Paulo Guilherme Pinheiro; Moise Leance \& João Marcelo Brazão Protázio},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -123,8 +123,8 @@
 }
 \makeatother
 \subtitle{Disciplina do PPGME/UFPA}
-\author{PG Pinheiro\footnote{Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. \emph{e-mail}: \href{mailto:pgpinheiro2@gmail.com}{\nolinkurl{pgpinheiro2@gmail.com}}}, Moise Leance\footnote{Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; \emph{e-mail}:} \& JM Protázio\footnote{Prof.~Dr.~na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; \emph{e-mail}: \href{mailto:mprotazio@gmail.com}{\nolinkurl{mprotazio@gmail.com}}}}
-\date{2022-05-20}
+\author{Paulo Guilherme Pinheiro\footnote{Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. \emph{e-mail}: \href{mailto:pgpinheiro2@gmail.com}{\nolinkurl{pgpinheiro2@gmail.com}}}; Moise Leance\footnote{Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; \emph{e-mail}:} \& João Marcelo Brazão Protázio\footnote{Prof.~Dr.~\emph{rer. nat.} na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; \emph{e-mail}: \href{mailto:mprotazio@gmail.com}{\nolinkurl{mprotazio@gmail.com}}}}
+\date{2022-05-26}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -153,13 +153,11 @@
 \hypertarget{sobre}{%
 \chapter{Sobre}\label{sobre}}
 
-Nós idealizamos este material como uma contribuição dos pesquisadores Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof.~Dr.~João Marcelo Protázio no programa.
+Nós idealizamos este material como uma contribuição dos pesquisadores do Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof.~Dr.~João Marcelo Protázio neste programa.
 
-Esperamos que vocês aproveitem este livro. Ele é uma pequena contribuição que construímos para colaborar com a comunidade \texttt{R} que muito nos ajuda ao longo destes anos de estudos.
+Esperamos que vocês aproveitem este livro. Ele é uma pequena contribuição elaborado com todo cuidado para colaborar com a comunidade dos usuários do \texttt{R}. Consiste numa retribuição a quem muito nos tem ajudado ao longo destes anos de estudos.
 
-Agradecemos qualquer tipo de \emph{feedback}. Eles sempre nos guiarão na melhoria deste livro.
-
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
+Agradecemos qualquer tipo de \emph{feedback}. Eles sempre nos guiarão na melhoria deste livro. Os \emph{e-mails} dos autores estão disponibilizados aqui para contato.
 
 \hypertarget{usage}{%
 \section{Usage}\label{usage}}
@@ -213,21 +211,33 @@ As you work, you may start a local server to live preview this HTML book. This p
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
+\hypertarget{introduuxe7uxe3o}{%
+\chapter{Introdução}\label{introduuxe7uxe3o}}
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
+Neste curso, seguiremos o roteiro apresentado por \ldots., nos \emph{slides} disponíveis em: \href{}{}. E o nosso texto-base é o livro de \emph{A Practical Guide to Geostatistical Mapping} de \emph{Tomislav Hengl} disponível gratuitamente no \emph{link} \url{https://spatial-analyst.net/book/}.
 
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
+\hypertarget{definiuxe7uxf5es}{%
+\section{Definições}\label{definiuxe7uxf5es}}
 
-All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+\hypertarget{modelo-universal-de-variauxe7uxe3o}{%
+\subsection*{Modelo Universal de Variação}\label{modelo-universal-de-variauxe7uxe3o}}
+\addcontentsline{toc}{subsection}{Modelo Universal de Variação}
 
-\hypertarget{an-unnumbered-section}{%
-\subsection*{An unnumbered section}\label{an-unnumbered-section}}
-\addcontentsline{toc}{subsection}{An unnumbered section}
+\[Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon'(\mathbf{s}) + \varepsilon''\]
 
-Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
+\hypertarget{inverso-da-distuxe2ncia}{%
+\subsection*{Inverso da distância}\label{inverso-da-distuxe2ncia}}
+\addcontentsline{toc}{subsection}{Inverso da distância}
+
+\[\hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i) \]
+
+\hypertarget{variograma}{%
+\subsection*{Variograma}\label{variograma}}
+\addcontentsline{toc}{subsection}{Variograma}
+
+\hypertarget{semi-variograma}{%
+\subsection*{Semi-variograma}\label{semi-variograma}}
+\addcontentsline{toc}{subsection}{Semi-variograma}
 
 \hypertarget{cross}{%
 \chapter{Cross-references}\label{cross}}
