@@ -6,11 +6,18 @@ Neste curso, seguiremos o roteiro apresentado por ...., nos *slides* disponívei
 
 ### Modelo Universal de Variação {-}
 
-$$Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon'(\mathbf{s}) + \varepsilon''$$
+\begin{equation}
+  Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon'(\mathbf{s}) + \varepsilon''
+  (\#eq:modelo-universal)
+\end{equation}
 
 ### Inverso da distância {-}
 
-$$\hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i) $$
+\begin{equation}
+  \hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i)
+  (\#eq:inv-dist)
+\end{equation}
+
 
 ### Variograma {-}
 

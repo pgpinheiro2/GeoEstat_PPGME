@@ -203,15 +203,6 @@ As you work, you may start a local server to live preview this HTML book. This p
 \end{Highlighting}
 \end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# automatically create a bib database for R packages}
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{write\_bib}\NormalTok{(}\FunctionTok{c}\NormalTok{(}
-  \FunctionTok{.packages}\NormalTok{(), }\StringTok{\textquotesingle{}bookdown\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}knitr\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rmarkdown\textquotesingle{}}
-\NormalTok{), }\StringTok{\textquotesingle{}packages.bib\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 \hypertarget{introduuxe7uxe3o}{%
 \chapter{Introdução}\label{introduuxe7uxe3o}}
 
@@ -224,13 +215,19 @@ Neste curso, seguiremos o roteiro apresentado por \ldots., nos \emph{slides} dis
 \subsection*{Modelo Universal de Variação}\label{modelo-universal-de-variauxe7uxe3o}}
 \addcontentsline{toc}{subsection}{Modelo Universal de Variação}
 
-\[Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon'(\mathbf{s}) + \varepsilon''\]
+\begin{equation}
+  Z(\mathbf{s}) = Z^{*}(\mathbf{s}) + \varepsilon'(\mathbf{s}) + \varepsilon''
+  \label{eq:modelo-universal}
+\end{equation}
 
 \hypertarget{inverso-da-distuxe2ncia}{%
 \subsection*{Inverso da distância}\label{inverso-da-distuxe2ncia}}
 \addcontentsline{toc}{subsection}{Inverso da distância}
 
-\[\hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i) \]
+\begin{equation}
+  \hat{z}(s_ 0) = \sum_{i=1}^{n} \lambda_i(s_0) \, z(s_ i)
+  \label{eq:inv-dist}
+\end{equation}
 
 \hypertarget{variograma}{%
 \subsection*{Variograma}\label{variograma}}

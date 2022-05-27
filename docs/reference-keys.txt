@@ -1,3 +1,5 @@
+eq:modelo-universal
+eq:inv-dist
 fig:grafs-01
 fig:nice-fig
 tab:nice-tab
