@@ -151,7 +151,8 @@
 \tableofcontents
 }
 \hypertarget{sobre}{%
-\chapter{Sobre}\label{sobre}}
+\chapter*{Sobre}\label{sobre}}
+\addcontentsline{toc}{chapter}{Sobre}
 
 Nós idealizamos este material como uma contribuição dos pesquisadores do Laboratório de Modelamento Estatístico-Matemático - LAMEM/UFPA para auxiliar os estudos na disciplina de Geoestatística nas turmas do Programa de Pós-Graduação em Matemática e Estatística - PPGME, Instituto de Ciências Exatas e Naturais - ICEN, da Universidade Federal do Pará - UFPA. Esta disciplina é anualmente ministrada pelo Prof.~Dr.~João Marcelo Protázio neste programa.
 
@@ -239,8 +240,34 @@ Neste curso, seguiremos o roteiro apresentado por \ldots., nos \emph{slides} dis
 \subsection*{Semi-variograma}\label{semi-variograma}}
 \addcontentsline{toc}{subsection}{Semi-variograma}
 
-\hypertarget{cross}{%
-\chapter{Cross-references}\label{cross}}
+\hypertarget{codigo}{%
+\chapter{Código}\label{codigo}}
+
+No início de todo código aconselhamos a organização tal como declarando o autor do código, a disciplina na qual ele foi elaborado e os pacotes utilizados, tais quais como apresentado a seguir.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# Prof. Dr. Marcelo Protazio}
+\DocumentationTok{\#\# Geostatistica PPGME}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [1] Packages}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\FunctionTok{library}\NormalTok{(gstat)}
+\FunctionTok{library}\NormalTok{(sp)}
+\FunctionTok{library}\NormalTok{(MASS)}
+\FunctionTok{library}\NormalTok{(spatstat)}
+\end{Highlighting}
+\end{Shaded}
 
 Cross-references make it easier for your readers to find and link to elements in your book.
 

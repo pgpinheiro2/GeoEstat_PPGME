@@ -1,4 +1,28 @@
-# Cross-references {#cross}
+# Código {#codigo}
+
+No início de todo código aconselhamos a organização tal como declarando o autor do código, a disciplina na qual ele foi elaborado e os pacotes utilizados, tais quais como apresentado a seguir.
+
+```{r cabeca, eval=FALSE}
+## --------------------------
+## Prof. Dr. Marcelo Protazio
+## Geostatistica PPGME
+## --------------------------
+```
+
+```{r pacotes, eval=FALSE}
+## ------------
+## ------------
+## [1] Packages
+## ------------
+## ------------
+
+library(gstat)
+library(sp)
+library(MASS)
+library(spatstat)
+```
+
+
 
 Cross-references make it easier for your readers to find and link to elements in your book.
 

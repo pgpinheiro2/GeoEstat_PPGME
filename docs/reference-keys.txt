@@ -1,13 +1,12 @@
 fig:nice-fig
 tab:nice-tab
 eq:binom
-sobre
 usage
 render-book
 preview-book
 introdução
 definições
-cross
+codigo
 chapters-and-sub-chapters
 captioned-figures-and-tables
 parts
