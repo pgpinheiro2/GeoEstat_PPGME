@@ -1,3 +1,4 @@
+fig:grafs-01
 fig:nice-fig
 tab:nice-tab
 eq:binom
@@ -7,6 +8,15 @@ preview-book
 introdução
 definições
 codigo
+cabeçalho
+pacotes
+leitura-dos-dados
+organização-dos-dados
+experimento-com-uma-variável
+transformação-dos-dados
+visualização-dos-dados
+estimação-espacial
+visualização-do-grid
 chapters-and-sub-chapters
 captioned-figures-and-tables
 parts

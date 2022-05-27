@@ -1,0 +1,204 @@
+# Código {#codigo}
+
+
+## Cabeçalho
+
+No início de todo código aconselhamos a organização tal como declarando o autor do código e a disciplina na qual ele foi elaborado.
+
+```{r cabeca, eval=FALSE}
+## --------------------------
+## Prof. Dr. Marcelo Protazio
+## Geostatistica PPGME
+## --------------------------
+```
+
+
+## Pacotes
+
+A seguir, os pacotes utilizados.
+
+```{r pacotes}
+## ------------
+## ------------
+## [1] Packages
+## ------------
+## ------------
+
+library(gstat)
+library(sp)
+library(MASS)
+if(!require(spatstat)){install.packages("spatstat")};library(spatstat)
+```
+Caso algum pacote não esteja instalado, execute o código
+
+## Leitura dos dados
+
+Aqui, o carregamento dos dados.
+
+```{r dados}
+## -------------
+## -------------
+## [2] Read Data
+## -------------
+## -------------
+
+data(jura)
+data = rbind(jura.pred,jura.val)
+borda = read.csv('border.csv')
+
+```
+
+## Organização dos dados
+
+```{r organiza}
+## ---------------------
+## ---------------------
+## [3] Data Organization
+## ---------------------
+## ---------------------
+
+data = data[,c(1,2,5:13)]
+names(data)[1:2] = c('x','y')
+rx = range(borda[,1])
+ry = range(borda[,2])
+
+```
+
+## Experimento com uma variável
+Vamos selecionar o Cádmio (Cd) como variável.
+
+### Transformação dos dados
+```{r univariate}
+## -------------------------
+## -------------------------
+## [4] Univariate Experiment
+## -------------------------
+## -------------------------
+
+## -------------------------
+## [4.1] Data Transformation
+## -------------------------
+
+id = 5
+d1 = d2 = data[,c(1,2,id)]
+s1 = shapiro.test(d1$Cd)
+l = boxcox(d1$Cd~1,plotit=F)
+l = l$x[which.max(l$y)]
+d2$Cd = (d1$Cd^l-1)/l
+s2 = shapiro.test(d2$Cd)
+```
+
+### Gráficos de pressupostos do modelo {-}
+```{r pdf-01, eval=FALSE, message=FALSE}
+pdf('zt.pdf',width=6,height=5)
+par(mfrow=c(2,2))
+hist(d1$Cd,col='gray',xlab=expression(z),main=NULL)
+qqnorm(d1$Cd, pch = 19, main=NULL)
+qqline(d1$Cd)
+hist(d2$Cd,col='gray',xlab=expression(z[t]),main=NULL)
+qqnorm(d2$Cd, pch = 19, main=NULL)
+qqline(d2$Cd)
+dev.off()
+```
+
+O código acima deverá gerar os seguintes gráficos.
+```{r grafs-01, echo=FALSE, fig.align='center', fig.cap='Histogramas e *qqplots* da variável original na primeiro linha e da variável transformada na segunda linha.'}
+par(mfrow=c(2,2))
+hist(d1$Cd,col='gray',xlab=expression(z),main=NULL)
+qqnorm(d1$Cd, pch = 19, main=NULL)
+qqline(d1$Cd)
+hist(d2$Cd,col='gray',xlab=expression(z[t]),main=NULL)
+qqnorm(d2$Cd, pch = 19, main=NULL)
+qqline(d2$Cd)
+```
+
+
+## Visualização dos dados
+
+```{r , eval=FALSE}
+## ------------------------
+## [4.2] Data Visualization
+## ------------------------
+
+pdf('mapa.pdf')
+plot(borda,lty=1,lwd=2,type='l',col='gray')
+points(d1$x,d1$y,pch=19,cex=d2$Cd)
+dev.off()
+```
+
+Se o código acima funcionar, você terá o seguinte resultado.
+```{r mapa, echo=FALSE}
+plot(borda,lty=1,lwd=2,type='l',col='gray')
+points(d1$x,d1$y,pch=19,cex=d2$Cd)
+```
+
+
+## Estimação espacial
+```{r spatial}
+## ------------------------
+## [4.3] Spatial Estimation
+## ------------------------
+
+nd = 20
+coordinates(d1) = ~x+y
+coordinates(d2) = ~x+y
+xd = seq(rx[1],rx[2],l=nd)
+yd = seq(ry[1],ry[2],l=nd)
+grid = expand.grid(xd,yd)
+ind = which(point.in.polygon(grid[,1],grid[,2],borda[,1],borda[,2])>0)
+grid = grid[ind,]
+```
+
+## Visualização do *grid*
+```{r, eval=FALSE}
+## ------------------------
+## [4.4] Grid Visualization
+## ------------------------
+
+pdf('grid.pdf')
+plot(borda,lty=2,type='l')
+points(d1,pch=19)
+points(grid,pch='+',col='red')
+dev.off()
+```
+
+
+```{r grid, echo=FALSE}
+plot(borda,lty=2,type='l')
+points(d1,pch=19)
+points(grid,pch='+',col='red')
+```
+
+
+Cross-references make it easier for your readers to find and link to elements in your book.
+
+## Chapters and sub-chapters
+
+There are two steps to cross-reference any heading:
+
+1. Label the heading: `# Hello world {#nice-label}`. 
+    - Leave the label off if you like the automated heading generated based on your heading title: for example, `# Hello world` = `# Hello world {#hello-world}`.
+    - To label an un-numbered heading, use: `# Hello world {-#nice-label}` or `{# Hello world .unnumbered}`.
+
+1. Next, reference the labeled heading anywhere in the text using `\@ref(nice-label)`; for example, please see Chapter \@ref(codigo). 
+    - If you prefer text as the link instead of a numbered reference use: [any text you want can go here](#codigo).
+
+## Captioned figures and tables
+
+Figures and tables *with captions* can also be cross-referenced from elsewhere in your book using `\@ref(fig:chunk-label)` and `\@ref(tab:chunk-label)`, respectively.
+
+See Figure \@ref(fig:nice-fig).
+
+```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center', fig.alt='Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+Don't miss Table \@ref(tab:nice-tab).
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(pressure, 10), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```

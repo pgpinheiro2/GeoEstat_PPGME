@@ -124,7 +124,7 @@
 \makeatother
 \subtitle{Disciplina do PPGME/UFPA}
 \author{Paulo Guilherme Pinheiro\footnote{Estatístico na Universidade Federal do Amapá - UNIFAP; Colaborador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME/UFPA. \emph{e-mail}: \href{mailto:pgpinheiro2@gmail.com}{\nolinkurl{pgpinheiro2@gmail.com}}}; Moise Leance\footnote{Aluno do Programa de Pós-Graduação em Matemática e Estatística - PPGME da Universidade Federal do Pará; Pesquisador no Laboratório de Modelamento Estatístico-Matemático - LAMEM; \emph{e-mail}:} \& João Marcelo Brazão Protázio\footnote{Prof.~Dr.~\emph{rer. nat.} na Universidade Federal do Pará - UFPA; Coordenador do Laboratório de Modelamento Estatístico-Matemático - LAMEM; \emph{e-mail}: \href{mailto:mprotazio@gmail.com}{\nolinkurl{mprotazio@gmail.com}}}}
-\date{2022-05-26}
+\date{2022-05-27}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -243,7 +243,10 @@ Neste curso, seguiremos o roteiro apresentado por \ldots., nos \emph{slides} dis
 \hypertarget{codigo}{%
 \chapter{Código}\label{codigo}}
 
-No início de todo código aconselhamos a organização tal como declarando o autor do código, a disciplina na qual ele foi elaborado e os pacotes utilizados, tais quais como apresentado a seguir.
+\hypertarget{cabeuxe7alho}{%
+\section{Cabeçalho}\label{cabeuxe7alho}}
+
+No início de todo código aconselhamos a organização tal como declarando o autor do código e a disciplina na qual ele foi elaborado.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -253,6 +256,11 @@ No início de todo código aconselhamos a organização tal como declarando o au
 \DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
 \end{Highlighting}
 \end{Shaded}
+
+\hypertarget{pacotes}{%
+\section{Pacotes}\label{pacotes}}
+
+A seguir, os pacotes utilizados.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -265,9 +273,241 @@ No início de todo código aconselhamos a organização tal como declarando o au
 \FunctionTok{library}\NormalTok{(gstat)}
 \FunctionTok{library}\NormalTok{(sp)}
 \FunctionTok{library}\NormalTok{(MASS)}
-\FunctionTok{library}\NormalTok{(spatstat)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(spatstat))\{}\FunctionTok{install.packages}\NormalTok{(}\StringTok{"spatstat"}\NormalTok{)\};}\FunctionTok{library}\NormalTok{(spatstat)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: spatstat
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: spatstat.data
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: spatstat.geom
+\end{verbatim}
+
+\begin{verbatim}
+## spatstat.geom 2.4-0
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'spatstat.geom'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:MASS':
+## 
+##     area
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: spatstat.random
+\end{verbatim}
+
+\begin{verbatim}
+## spatstat.random 2.2-0
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: spatstat.core
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: nlme
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: rpart
+\end{verbatim}
+
+\begin{verbatim}
+## spatstat.core 2.4-4
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'spatstat.core'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:gstat':
+## 
+##     idw
+\end{verbatim}
+
+\begin{verbatim}
+## Carregando pacotes exigidos: spatstat.linnet
+\end{verbatim}
+
+\begin{verbatim}
+## spatstat.linnet 2.3-2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## spatstat 2.3-4       (nickname: 'Watch this space') 
+## For an introduction to spatstat, type 'beginner'
+\end{verbatim}
+
+Caso algum pacote não esteja instalado, execute o código
+
+\hypertarget{leitura-dos-dados}{%
+\section{Leitura dos dados}\label{leitura-dos-dados}}
+
+Aqui, o carregamento dos dados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [2] Read Data}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\FunctionTok{data}\NormalTok{(jura)}
+\NormalTok{data }\OtherTok{=} \FunctionTok{rbind}\NormalTok{(jura.pred,jura.val)}
+\NormalTok{borda }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}border.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{organizauxe7uxe3o-dos-dados}{%
+\section{Organização dos dados}\label{organizauxe7uxe3o-dos-dados}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [3] Data Organization}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\NormalTok{data }\OtherTok{=}\NormalTok{ data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{5}\SpecialCharTok{:}\DecValTok{13}\NormalTok{)]}
+\FunctionTok{names}\NormalTok{(data)[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{] }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}y\textquotesingle{}}\NormalTok{)}
+\NormalTok{rx }\OtherTok{=} \FunctionTok{range}\NormalTok{(borda[,}\DecValTok{1}\NormalTok{])}
+\NormalTok{ry }\OtherTok{=} \FunctionTok{range}\NormalTok{(borda[,}\DecValTok{2}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{experimento-com-uma-variuxe1vel}{%
+\section{Experimento com uma variável}\label{experimento-com-uma-variuxe1vel}}
+
+Vamos selecionar o Cádmio (Cd) como variável.
+
+\hypertarget{transformauxe7uxe3o-dos-dados}{%
+\subsection{Transformação dos dados}\label{transformauxe7uxe3o-dos-dados}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [4] Univariate Experiment}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [4.1] Data Transformation}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\NormalTok{id }\OtherTok{=} \DecValTok{5}
+\NormalTok{d1 }\OtherTok{=}\NormalTok{ d2 }\OtherTok{=}\NormalTok{ data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,id)]}
+\NormalTok{s1 }\OtherTok{=} \FunctionTok{shapiro.test}\NormalTok{(d1}\SpecialCharTok{$}\NormalTok{Cd)}
+\NormalTok{l }\OtherTok{=} \FunctionTok{boxcox}\NormalTok{(d1}\SpecialCharTok{$}\NormalTok{Cd}\SpecialCharTok{\textasciitilde{}}\DecValTok{1}\NormalTok{,}\AttributeTok{plotit=}\NormalTok{F)}
+\NormalTok{l }\OtherTok{=}\NormalTok{ l}\SpecialCharTok{$}\NormalTok{x[}\FunctionTok{which.max}\NormalTok{(l}\SpecialCharTok{$}\NormalTok{y)]}
+\NormalTok{d2}\SpecialCharTok{$}\NormalTok{Cd }\OtherTok{=}\NormalTok{ (d1}\SpecialCharTok{$}\NormalTok{Cd}\SpecialCharTok{\^{}}\NormalTok{l}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\NormalTok{l}
+\NormalTok{s2 }\OtherTok{=} \FunctionTok{shapiro.test}\NormalTok{(d2}\SpecialCharTok{$}\NormalTok{Cd)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{gruxe1ficos-de-pressupostos-do-modelo}{%
+\subsection*{Gráficos de pressupostos do modelo}\label{gruxe1ficos-de-pressupostos-do-modelo}}
+\addcontentsline{toc}{subsection}{Gráficos de pressupostos do modelo}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pdf}\NormalTok{(}\StringTok{\textquotesingle{}zt.pdf\textquotesingle{}}\NormalTok{,}\AttributeTok{width=}\DecValTok{6}\NormalTok{,}\AttributeTok{height=}\DecValTok{5}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(d1}\SpecialCharTok{$}\NormalTok{Cd,}\AttributeTok{col=}\StringTok{\textquotesingle{}gray\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\FunctionTok{expression}\NormalTok{(z),}\AttributeTok{main=}\ConstantTok{NULL}\NormalTok{)}
+\FunctionTok{qqnorm}\NormalTok{(d1}\SpecialCharTok{$}\NormalTok{Cd, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{main=}\ConstantTok{NULL}\NormalTok{)}
+\FunctionTok{qqline}\NormalTok{(d1}\SpecialCharTok{$}\NormalTok{Cd)}
+\FunctionTok{hist}\NormalTok{(d2}\SpecialCharTok{$}\NormalTok{Cd,}\AttributeTok{col=}\StringTok{\textquotesingle{}gray\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\FunctionTok{expression}\NormalTok{(z[t]),}\AttributeTok{main=}\ConstantTok{NULL}\NormalTok{)}
+\FunctionTok{qqnorm}\NormalTok{(d2}\SpecialCharTok{$}\NormalTok{Cd, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{main=}\ConstantTok{NULL}\NormalTok{)}
+\FunctionTok{qqline}\NormalTok{(d2}\SpecialCharTok{$}\NormalTok{Cd)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+O código acima deverá gerar os seguintes gráficos.
+
+\begin{figure}
+
+{\centering \includegraphics{book_GeoEstat_PPGME_files/figure-latex/grafs-01-1} 
+
+}
+
+\caption{Histogramas e *qqplots* da variável original na primeiro linha e da variável transformada na segunda linha.}\label{fig:grafs-01}
+\end{figure}
+
+\hypertarget{visualizauxe7uxe3o-dos-dados}{%
+\section{Visualização dos dados}\label{visualizauxe7uxe3o-dos-dados}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [4.2] Data Visualization}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\FunctionTok{pdf}\NormalTok{(}\StringTok{\textquotesingle{}mapa.pdf\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(borda,}\AttributeTok{lty=}\DecValTok{1}\NormalTok{,}\AttributeTok{lwd=}\DecValTok{2}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{col=}\StringTok{\textquotesingle{}gray\textquotesingle{}}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(d1}\SpecialCharTok{$}\NormalTok{x,d1}\SpecialCharTok{$}\NormalTok{y,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{cex=}\NormalTok{d2}\SpecialCharTok{$}\NormalTok{Cd)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Se o código acima funcionar, você terá o seguinte resultado.
+\includegraphics{book_GeoEstat_PPGME_files/figure-latex/mapa-1.pdf}
+
+\hypertarget{estimauxe7uxe3o-espacial}{%
+\section{Estimação espacial}\label{estimauxe7uxe3o-espacial}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [4.3] Spatial Estimation}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\NormalTok{nd }\OtherTok{=} \DecValTok{20}
+\FunctionTok{coordinates}\NormalTok{(d1) }\OtherTok{=} \ErrorTok{\textasciitilde{}}\NormalTok{x}\SpecialCharTok{+}\NormalTok{y}
+\FunctionTok{coordinates}\NormalTok{(d2) }\OtherTok{=} \ErrorTok{\textasciitilde{}}\NormalTok{x}\SpecialCharTok{+}\NormalTok{y}
+\NormalTok{xd }\OtherTok{=} \FunctionTok{seq}\NormalTok{(rx[}\DecValTok{1}\NormalTok{],rx[}\DecValTok{2}\NormalTok{],}\AttributeTok{l=}\NormalTok{nd)}
+\NormalTok{yd }\OtherTok{=} \FunctionTok{seq}\NormalTok{(ry[}\DecValTok{1}\NormalTok{],ry[}\DecValTok{2}\NormalTok{],}\AttributeTok{l=}\NormalTok{nd)}
+\NormalTok{grid }\OtherTok{=} \FunctionTok{expand.grid}\NormalTok{(xd,yd)}
+\NormalTok{ind }\OtherTok{=} \FunctionTok{which}\NormalTok{(}\FunctionTok{point.in.polygon}\NormalTok{(grid[,}\DecValTok{1}\NormalTok{],grid[,}\DecValTok{2}\NormalTok{],borda[,}\DecValTok{1}\NormalTok{],borda[,}\DecValTok{2}\NormalTok{])}\SpecialCharTok{\textgreater{}}\DecValTok{0}\NormalTok{)}
+\NormalTok{grid }\OtherTok{=}\NormalTok{ grid[ind,]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{visualizauxe7uxe3o-do-grid}{%
+\section{\texorpdfstring{Visualização do \emph{grid}}{Visualização do grid}}\label{visualizauxe7uxe3o-do-grid}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\DocumentationTok{\#\# [4.4] Grid Visualization}
+\DocumentationTok{\#\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\FunctionTok{pdf}\NormalTok{(}\StringTok{\textquotesingle{}grid.pdf\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(borda,}\AttributeTok{lty=}\DecValTok{2}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(d1,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{)}
+\FunctionTok{points}\NormalTok{(grid,}\AttributeTok{pch=}\StringTok{\textquotesingle{}+\textquotesingle{}}\NormalTok{,}\AttributeTok{col=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
+\FunctionTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{book_GeoEstat_PPGME_files/figure-latex/grid-1.pdf}
 
 Cross-references make it easier for your readers to find and link to elements in your book.
 
